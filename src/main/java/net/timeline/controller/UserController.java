@@ -1,5 +1,7 @@
 package net.timeline.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,20 +18,54 @@ public class UserController {
 	
 	
 	// signup
+	@RequestMapping("/signupForm")
+	public String signupForm() {
+		
+		return "user/signup";
+	}
+	
 	@RequestMapping("/create")
 	public String create(User user) {
 		
 		userRepository.save(user);
 		
-		return "user/signin";
+		
+		return "redirect:/users/signinForm";
 		
 	}
+	
 	//login
-	@RequestMapping("/")
-	public String login() {
-		return "";
+	@RequestMapping("/loginForm")
+	public String loginForm() {
+		return "/user/login";
 			
 	}
+	
+	@RequestMapping("/login")
+	public String login(String email,String password,HttpSession session) {
+		User user = userRepository.findByEmail(email);
+		
+		if(!user.getEmail().equals(email)) {
+			
+			return "redirect:/";
+		}
+		
+		session.setAttribute("sessionUser", user);
+		
+		return "redirect:/";
+			
+	}
+	
+	//timeline
+		@RequestMapping("/timeline")
+		public String timeline() {
+			return "user/timeline";
+				
+		}
+	
+	
+	
+	
 		
 	
 

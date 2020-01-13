@@ -1,38 +1,32 @@
 {{> include/header}}
-<link href="/css/login-css.css" rel="stylesheet">
+{{> include/navbar}}
 
-
-<div class="container">
-  <div class="info">
-    <h1>sign up</h1></span>
-  </div>
-</div>
-<div class="form">
-  <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div>
-  <form class="register-form">
-    <input type="email" placeholder="email"/>
-    <input type="text" placeholder="name"/>
-    <input type="password" placeholder="password"/>
-    <input type="text" placeholder="email address"/>
-    <button>create</button>
-    <p class="message">Already registered? <a href="#">Sign In</a></p>
-  </form>
-  <form class="login-form">
-    <input type="text" placeholder="username"/>
-    <input type="password" placeholder="password"/>
-    <button>signup</button>
-    <p class="message">Not registered? <a href="#">Create an account</a></p>
-  </form>
-</div>
-<video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
-  <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
-</video>
-
-
-<script>
-$('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-</script>
+<section class="container">
+		    <article class="half">
+			        <h1>Azure</h1>
+			        <div class="tabs">
+				            <span class="tab signin"><a href="/users/loginForm">Sign in</a></span>
+				            <span class="tab signup active"><a href="/users/signupForm">Sign up</a></span>
+			        </div>
+			        <div class="content">
+				            
+    				        <div class="signin-cont cont">
+                                   <form action="/users/create" method="post" enctype="multipart/form-data">
+						                    <input type="text" name="name" id="name" class="inpt" required="required" placeholder="Your name">
+						                    <label for="name">Your name</label>
+                                            <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+						                    <label for="email">Your email</label>
+						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+						                    <div class="submit-wrap">
+							                        <input type="submit" value="Sign up" class="submit">
+							                        <a href="#" class="more">Terms and conditions</a>
+						                    </div>
+        					        </form>
+                            </div>
+			        </div>
+		    </article>
+		    <div class="half bg"></div>
+	</section>
 
 {{> include/footer}}
