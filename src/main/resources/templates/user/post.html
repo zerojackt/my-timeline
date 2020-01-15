@@ -10,53 +10,20 @@
               <li class="timeline-inverted">
                 <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
                 <div class="timeline-panel">
-                  <form role="form">
+                  <form role="form" action="/post/{{id}}/create">
                     <div class="timeline-heading">
                       <div class="form-group">
                         <label for="title">title</label>
-                        <input type="text" class="form-control" placeholder="Title">
+                        <input type="text" name="title" class="form-control" placeholder="Title">
                       </div>
                     </div>
                     <div class="timeline-body">
                       <div class="form-group">
-                        <label for="Text">text</label>
-                        <textarea class="form-control"  placeholder="text" rows="3"></textarea>
+                        <label for="Text">contents</label>
+                        <textarea class="form-control" name="contents" placeholder="text" rows="3"></textarea>
                       </div>
                     </div>
-                      <div class="ploc-tags">
-                        <div class="pull-right">
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default btn-xs active">
-                              <input type="checkbox" checked> alice
-                            </label>
-                          </div>
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-primary btn-xs">
-                              <input type="checkbox"> story
-                            </label>
-                          </div>
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-success btn-xs">
-                              <input type="checkbox"> blog
-                            </label>
-                          </div>
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-danger btn-xs">
-                              <input type="checkbox"> Danger
-                            </label>
-                          </div>
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-info btn-xs">
-                              <input type="checkbox"> personal
-                            </label>
-                          </div>
-                          <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-warning btn-xs">
-                              <input type="checkbox"> Warning
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                     
                       <br />
                       <br />
                       <button type="button" class="btn btn-success btn-lg btn-block">send</button>

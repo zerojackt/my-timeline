@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.timeline.entities.User;
@@ -30,7 +31,7 @@ public class UserController {
 		userRepository.save(user);
 		
 		
-		return "redirect:/users/signinForm";
+		return "redirect:/";
 		
 	}
 	
@@ -42,7 +43,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/login")
-	public String login(String email,String password,HttpSession session) {
+	public String login(String email,HttpSession session) {
 		User user = userRepository.findByEmail(email);
 		
 		if(!user.getEmail().equals(email)) {
@@ -57,11 +58,14 @@ public class UserController {
 	}
 	
 	//timeline
-		@RequestMapping("/timeline")
-		public String timeline() {
+		@RequestMapping("/{id}/timeline")
+		public String timeline(@PathVariable Long id) {
 			return "user/timeline";
 				
 		}
+		
+		
+		
 	
 	
 	

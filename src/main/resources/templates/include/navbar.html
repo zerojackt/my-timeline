@@ -5,7 +5,7 @@
         <div class="logo">
          
         </div>
-        <div class="title">
+        <div class="title"> 
           <h3>TimeLine</h3>
         </div>
       </a>
@@ -13,10 +13,15 @@
     <div class="body">
       <ul>
         <li class="home"><a href="#">Home</a></li>
+        {{^sessionUser}}
         <li class="page"><a href="/users/loginForm">login</a></li>
+        {{/sessionUser}}
         
-        
+        {{#sessionUser}}
         <li class="page"><a href="/users/timeline">timeline</a></li>
+        <li class="page"><a href="/users/post">post</a></li>
+         <li class="page"><a href="/users/logoutForm">logout</a></li>
+        {{/sessionUser}}
      
       </ul>
     </div>
