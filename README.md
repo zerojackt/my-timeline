@@ -3,9 +3,9 @@ my timeline
 
 - this is my project.
 
-- use 
 
- maven
+
+maven
 
 backend : sts4, jpa, mustache, h2 database, devtools 
 frontend : bootstrap
@@ -17,7 +17,7 @@ frontend : bootstrap
 - >  success
 
 2. logout and post
--> post success
+- > post success
 and use the ckeditor5
 
 3. profile and comments
