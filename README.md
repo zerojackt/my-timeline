@@ -17,7 +17,7 @@ frontend : bootstrap
 - >  success
 
 2. logout and post
-- > post success
+- > success
 and use the ckeditor5, spring security lite ( only write the SecurityConfig.java )
 
 3. profile and comments
