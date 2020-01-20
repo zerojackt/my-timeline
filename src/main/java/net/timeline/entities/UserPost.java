@@ -6,7 +6,11 @@ import java.time.format.DateTimeFormatter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
+import lombok.Data;
+
+@Data
 @Entity
 public class UserPost {
 	
@@ -16,19 +20,19 @@ public class UserPost {
 	
 	private String title;
 	
+	@Lob
 	private String contents;
 	private LocalDateTime createDate;
 	
-	private Integer likeCount = 0;
+	
 	
 	
 	public UserPost() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	
+
+
 	public UserPost(String title, String contents, LocalDateTime createDate) {
 		super();
 		this.title = title;
@@ -41,21 +45,12 @@ public class UserPost {
 
 
 	public String getFormatCreateDate() {
-		if(createDate.equals("")) {
-			return null;
-		}
+	
 		
-		return createDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy 'at' hh:mma z"));
+		return createDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm"));
 	}
 	
-	public void likeAdd() {
-		this.likeCount += 1;
-		
-		if(likeCount > 1) {
-			this.likeCount = 0;
-		}
-		
-	}
+	
 	
 	
 

@@ -4,10 +4,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 import net.timeline.entities.User;
+import net.timeline.repository.UserPostRepository;
 import net.timeline.repository.UserRepository;
 
 @Controller
@@ -16,6 +20,9 @@ public class UserController {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private UserPostRepository userPostRepository;
 	
 	
 	// signup
@@ -58,8 +65,11 @@ public class UserController {
 	}
 	
 	//timeline
-		@RequestMapping("/{id}/timeline")
-		public String timeline(@PathVariable Long id) {
+		@RequestMapping("/timeline")
+		public String timeline(Model model) {
+			model.addAttribute("userPost",userPostRepository.findAll());
+			
+			
 			return "user/timeline";
 				
 		}

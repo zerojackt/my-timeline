@@ -10,7 +10,7 @@
               <li class="timeline-inverted">
                 <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
                 <div class="timeline-panel">
-                  <form role="form" action="/post/{{id}}/create">
+                  <form role="form" action="/users/post/create" method="post">
                     <div class="timeline-heading">
                       <div class="form-group">
                         <label for="title">title</label>
@@ -19,14 +19,15 @@
                     </div>
                     <div class="timeline-body">
                       <div class="form-group">
-                        <label for="Text">contents</label>
+                        <label for="contents">contents</label>
                         <textarea class="form-control" name="contents" placeholder="text" rows="3"></textarea>
                       </div>
                     </div>
+               
                      
                       <br />
                       <br />
-                      <button type="button" class="btn btn-success btn-lg btn-block">send</button>
+                      <input type="submit" value="send">
                   </form>                
                 </div>
               
