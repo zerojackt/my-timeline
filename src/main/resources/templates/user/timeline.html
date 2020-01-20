@@ -14,7 +14,7 @@
          
               {{#userPost}}
               <li>
-                <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+               
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h4 class="timeline-title">{{title}}</h4>
@@ -25,8 +25,7 @@
                     <p>{{{contents}}}</p>
                    
                      <div>
-                    
-                  
+                   
 					 </div>                    
 
 						
@@ -34,7 +33,11 @@
                      </div>
                
                   <hr>
-                
+                <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span>Like</a>
+                 <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+    
+                 <a class="btn icon-btn btn-danger" href="#"><span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a>
+
                 </div>
               </li>
                 {{/userPost}}

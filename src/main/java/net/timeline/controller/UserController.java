@@ -1,6 +1,7 @@
 package net.timeline.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,14 @@ public class UserController {
 		
 		return "redirect:/";
 			
+	}
+	//logout
+	@RequestMapping("/logoutForm")
+	public String logout(HttpSession session) {
+	
+		session.removeAttribute("sessionUser");
+		return "redirect:/";
+		
 	}
 	
 	//timeline
