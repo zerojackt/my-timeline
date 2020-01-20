@@ -17,6 +17,8 @@ frontend : bootstrap
 - >  success
 
 2. logout and post
+-> post success
+and use the ckeditor5
 
 3. profile and comments
 
