@@ -20,6 +20,9 @@ public class User {
 	private String email;
 	private String password;
 	
+	private String contents ;
+	private String location ;
+	
 
 
 
@@ -49,6 +52,24 @@ public class User {
 			return false;
 		return true;
 	}
+	
+	
+
+
+		public User() {
+			// TODO Auto-generated constructor stub
+		}
+
+	public void updateForm(String name, String email, String contents, String location) {
+		
+		this.name = name;
+		this.email = email;
+		this.contents = contents;
+		this.location = location;
+	}
+
+
+
 	
 	
 	

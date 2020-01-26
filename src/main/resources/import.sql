@@ -1,1 +1,1 @@
-INSERT INTO USER(ID,EMAIL,NAME,PASSWORD) VALUES('1','test@gmail.com','test','1234');
+INSERT INTO USER(ID,CONTENTS,EMAIL,LOCATION,NAME,PASSWORD) VALUES('1','hello','test@gmail.com','hi','test','1234');
