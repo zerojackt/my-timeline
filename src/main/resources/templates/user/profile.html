@@ -3,9 +3,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/profile-css.css">
 
+<style type="text/css">
+
+.img {
+
+margin-top: 15px;
+
+
+}
+
+</style>
 {{#user}}
 	<div class="card">
-	  <img src="/img/user_1.png" style="width:50%" >
+	  <img src="/img/user_1.png" style="width:90px" class="img">
 	  <br>
 	  <h3><b>{{name}}</b></h3>
 	  <p class="title">{{email}}</p>
@@ -17,7 +27,7 @@
 	    <a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a>
 	    <a href="https://medium.com/" target="_blank"><i class="fa fa-medium"></i></a>
 	  </div>
-	  <p><a href="/users/profileForm/{{id}}" class="button">Profile</a></p>
+	  <p><a href="/users/profileForm/{{id}}" class="button">Profile editor</a></p>
 	</div>
 {{/user}}
 {{> include/footer}}
