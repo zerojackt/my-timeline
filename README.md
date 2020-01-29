@@ -22,6 +22,7 @@ and use the ckeditor5, spring security lite ( only write the SecurityConfig.java
 
 3. profile and comments
 - > profile success and editor profile
+- > add likeCount ( id 당 클릭으로 처리되지 않음 ), post 를 delete 할수있는 delete button
 
 4. .... 
 
