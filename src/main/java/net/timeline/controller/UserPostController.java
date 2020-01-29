@@ -6,7 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,12 +44,30 @@ public class UserPostController {
 	}
 	
 	@RequestMapping(value = ( "/create"),method=RequestMethod.POST)
-	public String create(String title,String contents,LocalDateTime createDate,Model model) {
+	public String create(String title,int likeCount,String contents,LocalDateTime createDate,Model model) {
 		
-		UserPost userPost = new UserPost(title,contents,createDate);
+		UserPost userPost = new UserPost(title,contents,createDate,likeCount);
 		userPostRepository.save(userPost);
 		
 		return "redirect:/";
+		
+	}
+	
+	@RequestMapping("/delete/{id}") 
+	public String delete(@PathVariable Long id) {
+		UserPost userPost = userPostRepository.findById(id).get();
+		userPostRepository.delete(userPost);
+		
+		return "redirect:/users/timeline";
+	}
+	
+	@RequestMapping("/like/{id}")
+	public String like(@PathVariable Long id) {
+		UserPost userPost = userPostRepository.findById(id).get();
+		userPost.addLikeCount();
+		userPostRepository.save(userPost);
+		
+		return "redirect:/users/timeline";
 		
 	}
 	

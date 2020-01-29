@@ -24,6 +24,8 @@ public class UserPost {
 	private String contents;
 	private LocalDateTime createDate;
 	
+	private int likeCount;
+	
 	
 	
 	
@@ -33,11 +35,12 @@ public class UserPost {
 	
 
 
-	public UserPost(String title, String contents, LocalDateTime createDate) {
+	public UserPost(String title, String contents, LocalDateTime createDate,int likeCount) {
 		super();
 		this.title = title;
 		this.contents = contents;
 		this.createDate = LocalDateTime.now();
+		this.likeCount = likeCount;
 	
 	}
 
@@ -49,7 +52,24 @@ public class UserPost {
 		
 		return createDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm"));
 	}
-	
+
+
+
+
+
+	public void addLikeCount() {
+		this.likeCount += 1;
+		
+		
+		if(likeCount >1) {
+			this.likeCount -= 2;
+		}
+		
+	}
+
+
+
+
 	
 	
 	
