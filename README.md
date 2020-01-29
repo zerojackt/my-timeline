@@ -21,7 +21,7 @@ frontend : bootstrap
 and use the ckeditor5, spring security lite ( only write the SecurityConfig.java )
 
 3. profile and comments
--> profile success and editor profile
+- > profile success and editor profile
 
 4. .... 
 
